@@ -1,0 +1,15 @@
+db.createCollection("family");
+
+db.family.insert({nome: "Maria", idade: 50, familyrole: "grandma"},
+{nome: "Joseph", idade: 80, familyrole: "grandpa"});
+
+db.family.find({familyrole: "grandpa"});
+
+db.family.update(
+    {nome: "Maria"},
+    {$set: {familyrole: "mother"}});
+
+db.family.remove({nome: "Joseph"})
+
+show collections;
+db.family.drop;
